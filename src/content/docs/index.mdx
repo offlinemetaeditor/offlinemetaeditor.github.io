@@ -1,0 +1,74 @@
+---
+title: Offline Meta Editor
+description: Download a Meta ad account, edit it on your computer, have Meta check every change, then upload it. A Windows app in the spirit of Google Ads Editor.
+template: splash
+hero:
+  tagline: Download a Meta ad account, edit it on your computer, have Meta check every change, then upload it. The way Google Ads Editor works, for Facebook and Instagram ads.
+  image:
+    file: ../../assets/logo-512.png
+    alt: The Offline Meta Editor logo, a white M whose first stroke is a green check, on a blue tile
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+    - text: Download
+      link: /getting-started/#install
+      icon: download
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Why an offline editor
+
+Ads Manager is built for one change at a time. Offline Meta Editor downloads the whole account to your
+computer, lets you change hundreds of things in minutes, and sends them to Meta in one go, after Meta has
+checked them.
+
+<CardGrid>
+	<Card title="The whole account on your computer" icon="laptop">
+		Campaigns, ad sets, ads and their creatives, plus the account's pixels, custom conversions and
+		audiences. Browse, sort, filter and edit without waiting for pages to load.
+	</Card>
+	<Card title="Bulk edits" icon="pencil">
+		Find and replace in names, budgets up or down by a percentage, pause or activate hundreds of rows,
+		duplicate with everything inside, copy and paste between campaigns, or edit in a spreadsheet.
+	</Card>
+	<Card title="Checked before it goes" icon="approve-check">
+		Check asks Meta to validate every pending change without applying anything. Push lists what will be
+		created, updated and deleted before anything leaves your computer.
+	</Card>
+	<Card title="Keys you already know" icon="setting">
+		<kbd>Ctrl</kbd>+<kbd>T</kbd> downloads, <kbd>Ctrl</kbd>+<kbd>K</kbd> checks,
+		<kbd>Ctrl</kbd>+<kbd>P</kbd> posts and <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes: the shortcuts of Google
+		Ads Editor.
+	</Card>
+</CardGrid>
+
+## How it works
+
+1. **Download** an ad account. Your token reads it from Meta's Marketing API.
+2. **Edit** on your computer. Every change is kept on your computer and shows as pending until you send it.
+3. **Check**: Meta runs all of its validations on your changes and applies nothing.
+4. **Push** the changes. You see the full list first, and nothing is sent until you confirm.
+
+Downloading again later keeps your pending edits: the editor merges what changed on Meta with what you
+changed here.
+
+## What you can edit
+
+- **Campaigns**: name, status, budget, bid strategy, spend cap, schedule.
+- **Ad sets**: budget and schedule, the conversion (pixel and event), targeting (places, age, gender,
+  languages, custom audiences, detailed targeting, placements, devices), attribution on new ad sets,
+  frequency cap.
+- **Ads**: texts, website, call to action, URL parameters, images and videos per placement, the Facebook
+  page and Instagram account the ad runs as, with a preview.
+- **Library**: pixels and their recent events, custom conversions and audiences (custom, website, lookalike
+  and customer lists hashed on your computer).
+
+<CardGrid>
+	<LinkCard title="Getting started" description="Install, give it your access token and open your first account." href="/getting-started/" />
+	<LinkCard title="Keyboard shortcuts" description="The full list, mapped from Google Ads Editor." href="/reference/keyboard-shortcuts/" />
+	<LinkCard title="Privacy and security" description="Where your data and your token live, and who the editor talks to." href="/reference/privacy/" />
+	<LinkCard title="Command line" description="The same operations in mae.exe, for scripts." href="/reference/command-line/" />
+</CardGrid>

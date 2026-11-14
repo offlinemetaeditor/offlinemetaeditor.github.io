@@ -1,0 +1,120 @@
+---
+// A labeled map of the editor's window, in the page's language. Numbers match the
+// list that follows it on the page.
+const pt = Astro.locals.starlightRoute.lang === 'pt-BR';
+const t = pt
+	? {
+			aria: 'Mapa da janela do editor',
+			menu: 'Menu: File · Account · Edit · View · Tools · Help',
+			tabs: 'Abas: uma conta (ou visão) por aba',
+			toolbar: 'Barra: conta · uso da API · Accounts · Audiences · Events Manager · Download · Check · Push · ⚙',
+			favorites: 'Favoritos',
+			tree: 'Árvore: campanhas e conjuntos',
+			levels: 'Campaigns · Ad sets · Ads, contagem e busca',
+			actions: 'Ações da seleção · View · Columns',
+			table: 'Tabela do nível',
+			props: 'Properties do item',
+			log: 'Log · Results',
+		}
+	: {
+			aria: "Map of the editor's window",
+			menu: 'Menu: File · Account · Edit · View · Tools · Help',
+			tabs: 'Tabs: one account (or view) per tab',
+			toolbar: 'Toolbar: account · API usage · Accounts · Audiences · Events Manager · Download · Check · Push · ⚙',
+			favorites: 'Favorites bar',
+			tree: 'Tree: campaigns and ad sets',
+			levels: 'Campaigns · Ad sets · Ads, row count and search',
+			actions: 'Selection actions · View · Columns',
+			table: 'Table of the level',
+			props: 'Properties of the item',
+			log: 'Log · Results',
+		};
+---
+
+<figure class="map" aria-label={t.aria}>
+	<div class="bar menu"><b>1</b>{t.menu}</div>
+	<div class="bar tabs"><b>2</b>{t.tabs}</div>
+	<div class="bar toolbar"><b>3</b>{t.toolbar}</div>
+	<div class="bar favorites"><b>4</b>{t.favorites}</div>
+	<div class="body">
+		<div class="pane tree"><b>5</b>{t.tree}</div>
+		<div class="center">
+			<div class="pane levels"><b>6</b>{t.levels}</div>
+			<div class="pane actions"><b>7</b>{t.actions}</div>
+			<div class="pane table"><b>8</b>{t.table}</div>
+		</div>
+		<div class="pane props"><b>9</b>{t.props}</div>
+	</div>
+	<div class="bar log"><b>10</b>{t.log}</div>
+</figure>
+
+<style>
+	.map {
+		margin: 1.5rem 0;
+		padding: 0.5rem;
+		display: grid;
+		gap: 0.35rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.6rem;
+		background: var(--sl-color-gray-6);
+		font-size: var(--sl-text-xs);
+		line-height: 1.35;
+	}
+	.bar,
+	.pane {
+		display: flex;
+		gap: 0.5rem;
+		align-items: flex-start;
+		padding: 0.4rem 0.55rem;
+		border-radius: 0.35rem;
+		background: var(--sl-color-black);
+		border: 1px solid var(--sl-color-hairline);
+		color: var(--sl-color-gray-2);
+	}
+	.toolbar {
+		border-color: var(--sl-color-accent);
+	}
+	b {
+		flex: none;
+		display: inline-grid;
+		place-items: center;
+		min-width: 1.4rem;
+		height: 1.4rem;
+		border-radius: 999px;
+		background: var(--sl-color-accent);
+		color: var(--sl-color-white);
+		font-weight: 700;
+	}
+	:root[data-theme='light'] b {
+		color: #fff;
+	}
+	.body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1.3fr);
+		gap: 0.35rem;
+		min-height: 13rem;
+	}
+	.center {
+		display: grid;
+		grid-template-rows: auto auto 1fr;
+		gap: 0.35rem;
+	}
+	.table {
+		background:
+			repeating-linear-gradient(
+				to bottom,
+				transparent 0 1.55rem,
+				var(--sl-color-hairline) 1.55rem calc(1.55rem + 1px)
+			),
+			var(--sl-color-black);
+	}
+	@media (max-width: 40rem) {
+		.body {
+			grid-template-columns: minmax(0, 1fr);
+			min-height: 0;
+		}
+		.table {
+			min-height: 5rem;
+		}
+	}
+</style>

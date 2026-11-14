@@ -1,0 +1,84 @@
+---
+title: Getting started
+description: Install Offline Meta Editor, give it your access token, download an ad account and send your first change.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Download from '../../components/Download.astro';
+
+Offline Meta Editor is a Windows program for Meta ad accounts. You download an account, edit it on your
+computer, ask Meta to check the changes and then upload them. This page takes you from nothing to your first
+change.
+
+:::caution[Beta]
+The editor is new. Before every upload, read the list the Push window shows you, and try your first upload
+on something that is paused.
+:::
+
+## What you need
+
+- **Windows 10 or 11**, 64-bit.
+- **A Meta access token** that can reach your ad accounts, with the `ads_read` permission to download and
+  `ads_management` to upload. [Access token](/access-token/) explains how to get one.
+- **Internet** to download, check and upload. Editing, browsing and filtering work offline.
+
+## Install
+
+<Download />
+
+There are two programs, and neither needs an installer:
+
+- `mae-gui.exe` is the editor, with its window. This is the one most people want.
+- `mae.exe` is the [command line](/reference/command-line/): the same operations, for scripts.
+
+Put them in a folder of your choice, for example `C:\Programs\Offline Meta Editor`, and double-click
+`mae-gui.exe`. To update, replace the files with newer ones: your accounts and settings live elsewhere
+(see [Settings and data folder](/reference/settings-and-data/)).
+
+:::note[Windows protected your PC]
+The programs are not code-signed yet, so Windows SmartScreen may stop the first start. Click
+**More info**, then **Run anyway**.
+:::
+
+## First run
+
+<Steps>
+
+1. **Give the editor your token.** Click **⚙** at the right end of the toolbar (or press
+   <kbd>Ctrl</kbd>+<kbd>,</kbd>). Under *Use a different access token*, paste the token and click
+   **Use for this session**, or **Save** to keep it. Then click **Test token**: the editor shows whose token
+   it is, its permissions and when it expires. [Access token](/access-token/) has the details and the other
+   ways to provide it.
+
+2. **Download an account.** Click **📂 Accounts** (or press <kbd>Ctrl</kbd>+<kbd>O</kbd>). Under
+   *Ad accounts on Meta*, click **Load list**, find the account and click **Download**. Big accounts take
+   a little while the first time (about 20 seconds for 2,000 ads); later downloads are much faster.
+
+   Options before you download: **Include archived** also brings archived campaigns, ad sets and ads, and
+   **Only campaign ids** downloads just the campaigns you list.
+
+3. **Look around.** The account opens in a tab. Campaigns and ad sets are in the tree on the left, the
+   table in the middle shows one level (Campaigns, Ad sets or Ads) and Properties, on the right, shows the
+   row you clicked. [The editor window](/guides/editor-window/) explains each part.
+
+4. **Make a change.** Click an ad set and change its name in Properties. The row gets an amber **●**
+   (changed) and the toolbar button now reads **⬆ Push 1 change**. Your change is saved on your computer
+   by itself.
+
+5. **Check it.** Click **✔ Check** (<kbd>Ctrl</kbd>+<kbd>K</kbd>). Meta runs its validations and applies
+   nothing; the result shows in the **Results** tab at the bottom.
+
+6. **Send it.** Click **⬆ Push 1 change** (<kbd>Ctrl</kbd>+<kbd>P</kbd>). The window lists every
+   operation, with old and new values. Click **⬆ Push 1 change(s) now** to send it, or **Cancel**.
+
+</Steps>
+
+Changed your mind before pushing? Select the row and click **↺ Revert**, or press
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> to undo the last edit.
+
+## Next steps
+
+- [Campaigns and ad sets](/guides/campaigns-and-ad-sets/) and [Ads](/guides/ads/): what you can edit.
+- [Bulk changes, copy and undo](/guides/bulk-changes/): many rows at once.
+- [Check and upload](/guides/check-and-push/): what happens when you push.
+- [Keyboard shortcuts](/reference/keyboard-shortcuts/): the keys of Google Ads Editor.

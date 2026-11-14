@@ -1,0 +1,11 @@
+---
+// The download button, in the page's language. The link lives in src/config.ts.
+import { LinkButton } from '@astrojs/starlight/components';
+import { RELEASES_URL } from '../config';
+
+const pt = Astro.locals.starlightRoute.lang === 'pt-BR';
+---
+
+<LinkButton href={RELEASES_URL} icon="download" iconPlacement="start">
+	{pt ? 'Baixar a versão mais recente' : 'Download the latest version'}
+</LinkButton>

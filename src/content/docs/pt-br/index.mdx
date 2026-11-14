@@ -1,0 +1,74 @@
+---
+title: Offline Meta Editor
+description: Baixe uma conta de anúncios da Meta, edite no seu computador, deixe a Meta conferir cada alteração e depois envie tudo. Um app para Windows inspirado no Google Ads Editor.
+template: splash
+hero:
+  tagline: Baixe uma conta de anúncios da Meta, edite no seu computador, deixe a Meta conferir cada alteração e depois envie tudo. Como no Google Ads Editor, só que para anúncios do Facebook e do Instagram.
+  image:
+    file: ../../../assets/logo-512.png
+    alt: O logotipo do Offline Meta Editor, um M branco cujo primeiro traço é um sinal de visto verde, sobre um quadrado azul
+  actions:
+    - text: Começar
+      link: /pt-br/getting-started/
+      icon: right-arrow
+    - text: Baixar
+      link: /pt-br/getting-started/#instalar
+      icon: download
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Por que um editor offline
+
+O Gerenciador de Anúncios foi feito para uma alteração de cada vez. O Offline Meta Editor baixa a conta inteira
+para o seu computador, deixa você mudar centenas de coisas em minutos e envia tudo para a Meta de uma vez só,
+depois que ela conferir tudo.
+
+<CardGrid>
+	<Card title="A conta inteira no seu computador" icon="laptop">
+		Campanhas, conjuntos de anúncios, anúncios e seus criativos, além dos pixels, das conversões personalizadas e
+		dos públicos da conta. Navegue, ordene, filtre e edite sem esperar página nenhuma carregar.
+	</Card>
+	<Card title="Edições em massa" icon="pencil">
+		Localizar e substituir nos nomes, aumentar ou reduzir orçamentos em uma porcentagem, pausar ou ativar centenas
+		de linhas, duplicar com tudo o que está dentro, copiar e colar entre campanhas ou editar numa planilha.
+	</Card>
+	<Card title="Conferido antes de sair" icon="approve-check">
+		O Check pede à Meta que valide cada alteração pendente, sem aplicar nada. O Push lista o que vai ser
+		criado, atualizado e excluído antes que qualquer coisa saia do seu computador.
+	</Card>
+	<Card title="Atalhos que você já conhece" icon="setting">
+		<kbd>Ctrl</kbd>+<kbd>T</kbd> baixa, <kbd>Ctrl</kbd>+<kbd>K</kbd> confere,
+		<kbd>Ctrl</kbd>+<kbd>P</kbd> envia e <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz: os atalhos do Google
+		Ads Editor.
+	</Card>
+</CardGrid>
+
+## Como funciona
+
+1. **Baixe** uma conta de anúncios. Com o seu token, o editor lê a conta pela Marketing API da Meta.
+2. **Edite** no seu computador. Cada alteração fica guardada nele e aparece como pendente até você enviar.
+3. **Confira**: a Meta roda todas as validações dela nas suas alterações e não aplica nada.
+4. **Envie** as alterações. Antes, você vê a lista completa, e nada sai até você confirmar.
+
+Se você baixar a conta de novo mais tarde, as suas edições pendentes continuam lá: o editor combina o que mudou
+na Meta com o que você mudou aqui.
+
+## O que você pode editar
+
+- **Campanhas**: nome, status, orçamento, estratégia de lance, limite de gastos, programação.
+- **Conjuntos de anúncios**: orçamento e programação, a conversão (pixel e evento), a segmentação (localizações,
+  idade, gênero, idiomas, públicos personalizados, segmentação detalhada, posicionamentos, dispositivos), a
+  atribuição nos conjuntos novos, o limite de frequência.
+- **Anúncios**: textos, site, chamada para ação, parâmetros de URL, imagens e vídeos por posicionamento, a página
+  do Facebook e a conta do Instagram em nome das quais o anúncio roda, com pré-visualização.
+- **Biblioteca**: pixels e os eventos recentes deles, conversões personalizadas e públicos (personalizados, de
+  site, semelhantes e listas de clientes com hash aplicado no seu computador).
+
+<CardGrid>
+	<LinkCard title="Primeiros passos" description="Instale, informe o seu token de acesso e abra a sua primeira conta." href="/pt-br/getting-started/" />
+	<LinkCard title="Atalhos de teclado" description="A lista completa, baseada no Google Ads Editor." href="/pt-br/reference/keyboard-shortcuts/" />
+	<LinkCard title="Privacidade e segurança" description="Onde ficam os seus dados e o seu token, e com quem o editor se comunica." href="/pt-br/reference/privacy/" />
+	<LinkCard title="Linha de comando" description="As mesmas operações no mae.exe, para scripts." href="/pt-br/reference/command-line/" />
+</CardGrid>

@@ -1,0 +1,84 @@
+---
+title: Primeiros passos
+description: Instale o Offline Meta Editor, informe o seu token de acesso, baixe uma conta de anúncios e envie a sua primeira alteração.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Download from '../../../components/Download.astro';
+
+O Offline Meta Editor é um programa para Windows feito para contas de anúncios da Meta. Você baixa uma conta, edita
+no seu computador, pede para a Meta conferir as alterações e depois as envia. Esta página leva você do zero até a
+sua primeira alteração.
+
+:::caution[Beta]
+O editor é novo. Antes de cada envio, leia a lista que a janela do Push mostra e faça o seu primeiro envio em algo
+que esteja pausado.
+:::
+
+## O que você precisa
+
+- **Windows 10 ou 11**, 64 bits.
+- **Um token de acesso da Meta** que alcance as suas contas de anúncios, com a permissão `ads_read` para baixar e
+  `ads_management` para enviar. [Token de acesso](/pt-br/access-token/) explica como conseguir um.
+- **Internet** para baixar, conferir e enviar. Editar, navegar e filtrar funcionam offline.
+
+## Instalar
+
+<Download />
+
+São dois programas, e nenhum dos dois precisa de instalador:
+
+- `mae-gui.exe` é o editor com interface gráfica. É o que a maioria das pessoas quer.
+- `mae.exe` é a [linha de comando](/pt-br/reference/command-line/): as mesmas operações, para scripts.
+
+Coloque os dois numa pasta à sua escolha, por exemplo `C:\Programs\Offline Meta Editor`, e clique duas vezes em
+`mae-gui.exe`. Para atualizar, troque os arquivos pelos mais novos: as suas contas e configurações ficam em outro
+lugar (veja [Configurações e pasta de dados](/pt-br/reference/settings-and-data/)).
+
+:::note[O Windows protegeu o computador]
+Os programas ainda não são assinados digitalmente, então o SmartScreen do Windows pode barrar a primeira execução.
+Clique em **Mais informações** e depois em **Executar assim mesmo**.
+:::
+
+## Primeira execução
+
+<Steps>
+
+1. **Informe o seu token ao editor.** Clique em **⚙** na ponta direita da barra de ferramentas (ou pressione
+   <kbd>Ctrl</kbd>+<kbd>,</kbd>). Em *Use a different access token*, cole o token e clique em
+   **Use for this session**, ou em **Save** para guardá-lo. Depois clique em **Test token**: o editor mostra de quem
+   é o token, quais permissões ele tem e quando expira. [Token de acesso](/pt-br/access-token/) traz os detalhes e
+   as outras formas de informar o token.
+
+2. **Baixe uma conta.** Clique em **📂 Accounts** (ou pressione <kbd>Ctrl</kbd>+<kbd>O</kbd>). Em
+   *Ad accounts on Meta*, clique em **Load list**, encontre a conta e clique em **Download**. Contas grandes demoram
+   um pouco na primeira vez (cerca de 20 segundos para 2.000 anúncios); os downloads seguintes são bem mais rápidos.
+
+   Opções antes de baixar: **Include archived** traz também as campanhas, os conjuntos de anúncios e os anúncios
+   arquivados, e **Only campaign ids** baixa só as campanhas que você listar.
+
+3. **Dê uma olhada.** A conta abre numa aba. As campanhas e os conjuntos de anúncios ficam na árvore à esquerda, a
+   tabela no meio mostra um nível (Campaigns, Ad sets ou Ads) e o painel Properties, à direita, mostra a linha em
+   que você clicou. [A janela do editor](/pt-br/guides/editor-window/) explica cada parte.
+
+4. **Faça uma alteração.** Clique num conjunto de anúncios e mude o nome dele em Properties. A linha ganha um
+   **●** âmbar (alterada) e o botão da barra de ferramentas passa a mostrar **⬆ Push 1 change**. A alteração é
+   salva no seu computador automaticamente.
+
+5. **Confira.** Clique em **✔ Check** (<kbd>Ctrl</kbd>+<kbd>K</kbd>). A Meta roda as validações dela e não aplica
+   nada; o resultado aparece na aba **Results**, na parte de baixo.
+
+6. **Envie.** Clique em **⬆ Push 1 change** (<kbd>Ctrl</kbd>+<kbd>P</kbd>). A janela lista cada operação, com os
+   valores antigos e os novos. Clique em **⬆ Push 1 change(s) now** para enviar, ou em **Cancel**.
+
+</Steps>
+
+Mudou de ideia antes de enviar? Selecione a linha e clique em **↺ Revert**, ou pressione
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> para desfazer a última edição.
+
+## Próximos passos
+
+- [Campanhas e conjuntos de anúncios](/pt-br/guides/campaigns-and-ad-sets/) e [Anúncios](/pt-br/guides/ads/): o que você pode editar.
+- [Alterações em massa, copiar e desfazer](/pt-br/guides/bulk-changes/): muitas linhas de uma vez.
+- [Conferir e enviar](/pt-br/guides/check-and-push/): o que acontece quando você envia.
+- [Atalhos de teclado](/pt-br/reference/keyboard-shortcuts/): os atalhos do Google Ads Editor.

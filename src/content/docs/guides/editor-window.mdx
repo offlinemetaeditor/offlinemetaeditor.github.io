@@ -1,0 +1,88 @@
+---
+title: The editor window
+description: The parts of the window, how selecting works, the colors of status and changes, and the columns, sorting and filters of the table.
+---
+
+import WindowMap from '../../../components/WindowMap.astro';
+
+<WindowMap />
+
+1. **Menu.** Every command, with its keyboard shortcut at the right.
+2. **Tabs.** Each tab shows one account with its own view. See [Tabs and favorites](/guides/tabs-and-favorites/).
+3. **Toolbar.** The account's name, id, currency, time zone and when it was downloaded; **API 12%** is how
+   much of Meta's limit the account has used (see [How syncing works](/reference/how-sync-works/#api-limits)).
+   At the right: **📂 Accounts**, **Audiences**, **Events Manager**, **⟳ Download**, **✔ Check**,
+   **⬆ Push N changes** and **⚙** Settings. "unsaved" appears for a moment after an edit, until the editor
+   saves it.
+4. **Favorites bar.** Saved selections and views. Tools → Favorites bar hides it.
+5. **Tree.** The campaigns and their ad sets, with a status dot. Click a campaign to see its ad sets, or an ad
+   set to see its ads; <kbd>Ctrl</kbd>+click adds or removes one. The box at the top searches, and the two
+   lists below order the tree (Meta's order, name, active first, newest, oldest, biggest budget, pending
+   changes first) and filter it.
+6. **Levels.** **Campaigns**, **Ad sets** and **Ads**, with the number of rows and a search by name or id.
+7. **Actions.** **➕ New** and, while rows are selected, what you can do with them: **▶ Activate** or
+   **⏸ Pause**, **Budget ▾**, **Duplicate ▾**, **Rename ▾**, **↺ Revert**, **More ▾** and **🗑 Delete**.
+   At the right, **View ▾** and **⚙ Columns**.
+8. **Table.** One row per campaign, ad set or ad.
+9. **Properties.** Everything about the row you clicked, ready to edit.
+10. **Log and Results.** What the editor did, and the outcome of the last check or push.
+
+## Selecting rows
+
+Click a row to select it, <kbd>Ctrl</kbd>+click to add or remove rows, <kbd>Shift</kbd>+click to select a
+range. With the keyboard, the arrows move between rows and <kbd>Shift</kbd>+arrows select as they go.
+
+**What you select limits the levels below, as in Ads Manager.** Select two campaigns and the next tabs read
+*Ad sets for 2 campaigns* and *Ads for 2 campaigns*, and show only theirs. Each level keeps its own
+selection; **2 selected ✖** next to a level clears it. <kbd>Alt</kbd>+<kbd>→</kbd> goes down a level into
+the selected rows, and <kbd>Alt</kbd>+<kbd>←</kbd> comes back up.
+
+## What the marks mean
+
+The first column of the table shows what will happen on the next push:
+
+| Mark | Meaning |
+|---|---|
+| **+** (green) | New: created on push |
+| **●** (amber) | Changed: point at it to see which fields |
+| **✖** (red) | Deleted on push |
+| **!** (red) | Meta refused the last attempt: point at it, or see *Last error* in Properties |
+
+Changed values are amber in the table, and in Properties the field's name is amber with a **↺** to put back
+Meta's value. Point at the name to see the value on Meta.
+
+**Status and delivery** have a colored dot before Meta's words: green is running; gray is off (paused,
+campaign paused, archived); blue waits on Meta (processing, in review); amber needs attention (with issues,
+billing); red is rejected or deleted.
+
+## Columns, sorting and filters
+
+- **⚙ Columns** shows, hides and orders the columns of each level. Besides every field there are columns
+  that the editor works out: budget and where it is set, conversion event, pixel, locations, age, gender,
+  placements, custom audiences, attribution, number of ad sets or ads and, for ads, their texts, link, call
+  to action, URL parameters, format, media, page and Instagram account, pending changes and last error.
+- **Sort** by clicking a column title: ascending, descending, then back to Meta's order.
+- **Filter** with **View ▾ → Filter boxes under the column titles**, then type under a title:
+
+  | Type | Shows rows where the column |
+  |---|---|
+  | `text` | contains *text* |
+  | `!text` | does not contain *text* |
+  | `=text` | is exactly *text* |
+  | `>50` `>=50` `<10` `<=10` | is a number above or below (budgets in currency units) |
+  | `empty` / `!empty` | is empty / is not empty |
+  | `a\|b` | contains *a* or *b* |
+
+- **View ▾ → Show** keeps only active, not active, in review or with issues, with pending changes, or with
+  errors. **Hide archived/deleted** hides those.
+
+While anything hides rows, the count turns red: **Showing 6 of 11 rows ✖**. Point at it to see why, and click
+it (or press <kbd>Ctrl</kbd>+<kbd>L</kbd>) to show every row again.
+
+Columns, sorting and Show are remembered the next time you open the editor.
+
+## Themes
+
+**⚙ Settings → Appearance** picks the theme: follow Windows, Light, Dark or **Frutiger Aero**, a Windows 7
+look with glass panels over a sky-blue background. You can also use the Windows font (Segoe UI) and change
+the zoom.

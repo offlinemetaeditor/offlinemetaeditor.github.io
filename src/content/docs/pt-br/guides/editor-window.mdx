@@ -1,0 +1,92 @@
+---
+title: A janela do editor
+description: As partes da janela, como funciona a seleção, as cores de status e de alterações, e as colunas, a ordenação e os filtros da tabela.
+---
+
+import WindowMap from '../../../../components/WindowMap.astro';
+
+<WindowMap />
+
+1. **Menu.** Todos os comandos, com o atalho de teclado à direita.
+2. **Abas.** Cada aba mostra uma conta com a sua própria visão. Veja [Abas e favoritos](/pt-br/guides/tabs-and-favorites/).
+3. **Barra de ferramentas.** O nome da conta, o id, a moeda, o fuso horário e quando ela foi baixada; **API 12%** é
+   quanto do limite da Meta a conta já usou (veja [Como funciona a sincronização](/pt-br/reference/how-sync-works/#limites-da-api)).
+   À direita: **📂 Accounts**, **Audiences**, **Events Manager**, **⟳ Download**, **✔ Check**,
+   **⬆ Push N changes** e **⚙** Settings. "unsaved" aparece por um instante depois de uma edição, até o editor
+   salvar.
+4. **Barra de favoritos.** Seleções e visões salvas. Tools → Favorites bar esconde a barra.
+5. **Árvore.** As campanhas e os conjuntos de anúncios delas, com um ponto de status. Clique numa campanha para ver
+   os conjuntos dela, ou num conjunto para ver os anúncios dele; <kbd>Ctrl</kbd>+clique adiciona ou remove um item.
+   A caixa no topo faz a busca, e as duas listas logo abaixo ordenam a árvore (ordem da Meta, nome, ativos primeiro,
+   mais novos, mais antigos, maior orçamento, alterações pendentes primeiro) e a filtram.
+6. **Níveis.** **Campaigns**, **Ad sets** e **Ads**, com o número de linhas e uma busca por nome ou id.
+7. **Ações.** **➕ New** e, enquanto houver linhas selecionadas, o que você pode fazer com elas: **▶ Activate** ou
+   **⏸ Pause**, **Budget ▾**, **Duplicate ▾**, **Rename ▾**, **↺ Revert**, **More ▾** e **🗑 Delete**.
+   À direita, **View ▾** e **⚙ Columns**.
+8. **Tabela.** Uma linha por campanha, conjunto de anúncios ou anúncio.
+9. **Properties.** Tudo sobre a linha em que você clicou, pronto para editar.
+10. **Log e Results.** O que o editor fez e o resultado da última conferência ou do último envio.
+
+## Selecionar linhas
+
+Clique numa linha para selecioná-la, <kbd>Ctrl</kbd>+clique para adicionar ou remover linhas e
+<kbd>Shift</kbd>+clique para selecionar um intervalo. No teclado, as setas passam de uma linha para outra e
+<kbd>Shift</kbd>+setas vão selecionando pelo caminho.
+
+**O que você seleciona limita os níveis abaixo, como no Gerenciador de Anúncios.** Selecione duas campanhas e as
+abas seguintes passam a se chamar *Ad sets for 2 campaigns* e *Ads for 2 campaigns*, mostrando só os itens delas.
+Cada nível guarda a sua própria seleção; **2 selected ✖**, ao lado de um nível, limpa a seleção dele.
+<kbd>Alt</kbd>+<kbd>→</kbd> desce um nível, para dentro das linhas selecionadas, e <kbd>Alt</kbd>+<kbd>←</kbd>
+sobe de volta.
+
+## O que cada sinal significa
+
+A primeira coluna da tabela mostra o que vai acontecer no próximo envio:
+
+| Sinal | Significado |
+|---|---|
+| **+** (verde) | Novo: criado no envio |
+| **●** (âmbar) | Alterado: passe o mouse para ver quais campos |
+| **✖** (vermelho) | Excluído no envio |
+| **!** (vermelho) | A Meta recusou a última tentativa: passe o mouse ou veja *Last error* em Properties |
+
+Os valores alterados ficam em âmbar na tabela e, em Properties, o nome do campo fica âmbar, com um **↺** para
+voltar ao valor da Meta. Passe o mouse sobre o nome para ver o valor que está na Meta.
+
+**Status e Delivery** têm um ponto colorido antes do texto da Meta. Verde quer dizer rodando; cinza, desligado
+(pausado, campanha pausada, arquivado); azul, aguardando a Meta (em processamento, em análise); âmbar, precisa de
+atenção (com problemas, cobrança); vermelho, reprovado ou excluído.
+
+## Colunas, ordenação e filtros
+
+- **⚙ Columns** mostra, esconde e ordena as colunas de cada nível. Além de todos os campos, existem colunas que o
+  editor calcula: orçamento e onde ele é definido, evento de conversão, pixel, localizações, idade, gênero,
+  posicionamentos, públicos personalizados, atribuição, número de conjuntos de anúncios ou de anúncios e, nos
+  anúncios, textos, link, chamada para ação, parâmetros de URL, formato, mídia, página e conta do Instagram,
+  alterações pendentes e último erro.
+- **Ordene** clicando no título de uma coluna: crescente, decrescente e depois de volta à ordem da Meta.
+- **Filtre** com **View ▾ → Filter boxes under the column titles** e depois digite embaixo de um título:
+
+  | Digite | Mostra as linhas em que a coluna |
+  |---|---|
+  | `text` | contém *text* |
+  | `!text` | não contém *text* |
+  | `=text` | é exatamente *text* |
+  | `>50` `>=50` `<10` `<=10` | é um número acima ou abaixo (orçamentos em unidades da moeda) |
+  | `empty` / `!empty` | está vazia / não está vazia |
+  | `a\|b` | contém *a* ou *b* |
+
+- **View ▾ → Show** deixa só as linhas ativas, não ativas, em análise ou com problemas, com alterações pendentes
+  ou com erros. **Hide archived/deleted** esconde as linhas arquivadas e excluídas.
+
+Enquanto alguma coisa estiver escondendo linhas, a contagem fica vermelha: **Showing 6 of 11 rows ✖**. Passe o
+mouse sobre ela para ver o motivo e clique nela (ou pressione <kbd>Ctrl</kbd>+<kbd>L</kbd>) para mostrar todas as
+linhas de novo.
+
+As colunas, a ordenação e o Show ficam guardados para a próxima vez que você abrir o editor.
+
+## Temas
+
+Em **⚙ Settings → Appearance** você escolhe o tema: Follow Windows, Light, Dark ou **Frutiger Aero**, um visual de
+Windows 7 com painéis de vidro sobre um fundo azul-céu. Você também pode usar a fonte do Windows (Segoe UI) e
+mudar o zoom.

@@ -1,0 +1,17 @@
+---
+// Starlight's footer, plus a note that the editor is not a Meta product.
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default><slot /></Default>
+<p class="disclaimer">{Astro.locals.t('mae.disclaimer')}</p>
+
+<style>
+	.disclaimer {
+		margin-top: 2rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		font-size: var(--sl-text-xs);
+		color: var(--sl-color-gray-3);
+	}
+</style>

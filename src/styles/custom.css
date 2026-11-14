@@ -1,0 +1,41 @@
+/* The logo's blue as the accent. Dark mode is Starlight's default; light mode below. */
+:root {
+	--sl-color-accent-low: #0a2846;
+	--sl-color-accent: #1c8ce3;
+	--sl-color-accent-high: #bfe1ff;
+	--mae-green: #6fd245;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #d4eafc;
+	--sl-color-accent: #0b5fb8;
+	--sl-color-accent-high: #082f5a;
+	--mae-green: #2f8f12;
+}
+
+/* Key caps in the pages. Inline, so they never make a line taller; only in page content, so
+   Starlight's own search hint keeps its responsive display. */
+.sl-markdown-content kbd {
+	padding: 0.1em 0.35em;
+	border: 1px solid var(--sl-color-gray-5);
+	border-bottom-width: 2px;
+	border-radius: 0.3em;
+	background: var(--sl-color-gray-6);
+	font-family: var(--sl-font-system-mono);
+	font-size: 0.82em;
+	white-space: nowrap;
+}
+
+/* Tables: a first column of keys or code (shortcuts, commands, files) stays on one line;
+   sentences wrap as usual. On phones the keys wrap too. */
+.sl-markdown-content table {
+	font-size: var(--sl-text-sm);
+}
+.sl-markdown-content td:first-child:has(> kbd, > code) {
+	white-space: nowrap;
+}
+@media (max-width: 40rem) {
+	.sl-markdown-content td:first-child:has(> kbd) {
+		white-space: normal;
+	}
+}
