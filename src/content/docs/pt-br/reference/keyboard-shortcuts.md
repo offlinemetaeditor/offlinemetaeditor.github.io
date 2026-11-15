@@ -1,10 +1,9 @@
 ---
 title: Atalhos de teclado
-description: Todos os atalhos do editor. Eles seguem a referência rápida do Google Ads Editor, então as teclas que você já conhece fazem a mesma coisa aqui.
+description: Todos os atalhos do editor e o que cada um faz.
 ---
 
-Os atalhos seguem os do [Google Ads Editor](https://support.google.com/google-ads/editor/answer/54654?hl=pt-BR),
-então <kbd>Ctrl</kbd>+<kbd>T</kbd> baixa, <kbd>Ctrl</kbd>+<kbd>K</kbd> confere e <kbd>Ctrl</kbd>+<kbd>P</kbd>
+<kbd>Ctrl</kbd>+<kbd>T</kbd> baixa, <kbd>Ctrl</kbd>+<kbd>K</kbd> confere e <kbd>Ctrl</kbd>+<kbd>P</kbd>
 envia. No editor, <kbd>F1</kbd> (ou **Help → Keyboard shortcuts**) mostra esta lista, e cada item dos menus
 mostra a sua tecla.
 
@@ -88,6 +87,3 @@ mostra a sua tecla.
   <kbd>Ctrl</kbd>+<kbd>K</kbd>, <kbd>Ctrl</kbd>+<kbd>H</kbd>…) continuam funcionando.
 - Com um texto selecionado em Properties (um id, por exemplo), <kbd>Ctrl</kbd>+<kbd>C</kbd> copia esse texto.
 - Durante um download ou um envio, só funcionam as teclas de consulta (buscar, navegar, copiar).
-- Dois atalhos do Google Ads Editor ficam sem função aqui, porque a Meta não tem nada parecido: aceitar e
-  rejeitar propostas (<kbd>Ctrl</kbd>+<kbd>[</kbd> e <kbd>Ctrl</kbd>+<kbd>]</kbd>) e alterar URLs
-  (<kbd>Ctrl</kbd>+<kbd>U</kbd>; o link e os parâmetros de URL de um anúncio ficam em Properties).

@@ -1,9 +1,8 @@
 ---
 title: Keyboard shortcuts
-description: Every shortcut of the editor. They follow Google Ads Editor's quick reference, so the keys you know do the same here.
+description: Every shortcut of the editor and what each one does.
 ---
 
-The shortcuts follow [Google Ads Editor's](https://support.google.com/google-ads/editor/answer/54654), so
 <kbd>Ctrl</kbd>+<kbd>T</kbd> downloads, <kbd>Ctrl</kbd>+<kbd>K</kbd> checks and <kbd>Ctrl</kbd>+<kbd>P</kbd>
 posts. In the editor, <kbd>F1</kbd> (or **Help → Keyboard shortcuts**) shows this list, and every menu entry
 shows its key.
@@ -88,6 +87,3 @@ shows its key.
   <kbd>Ctrl</kbd>+<kbd>K</kbd>, <kbd>Ctrl</kbd>+<kbd>H</kbd>…) still work.
 - With text selected in Properties (an id, for example), <kbd>Ctrl</kbd>+<kbd>C</kbd> copies that text.
 - While a download or a push runs, only the keys that look around work (search, move, copy).
-- Two of Google Ads Editor's keys have nothing to do here, because Meta has no such thing: accept and reject
-  proposals (<kbd>Ctrl</kbd>+<kbd>[</kbd> and <kbd>Ctrl</kbd>+<kbd>]</kbd>) and change URLs
-  (<kbd>Ctrl</kbd>+<kbd>U</kbd>; an ad's link and URL parameters are in its Properties).
