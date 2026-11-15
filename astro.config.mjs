@@ -51,6 +51,7 @@ export default defineConfig({
 						'guides/spreadsheets',
 						'guides/events-and-audiences',
 						'guides/tabs-and-favorites',
+						'guides/ai-agents',
 					],
 				},
 				{

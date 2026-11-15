@@ -55,6 +55,7 @@ With a single downloaded account, every command uses it. With more, pick one wit
 | `token` | The access token: `status`, `set`, `logout`, `login`, `delete`. See [Access token](/access-token/) |
 | `gui` | Open the editor |
 | `path` | Print the path of the account's file |
+| `mcp` | Serve the editor to AI agents over MCP; `--allow-push` lets them push too. See [AI agents (MCP)](/guides/ai-agents/) |
 
 Ids separated by commas (`id1,id2,id3`) work wherever a command takes several ids.
 

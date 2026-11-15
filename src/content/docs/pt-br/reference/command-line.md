@@ -56,6 +56,7 @@ Com uma única conta baixada, todos os comandos usam essa conta. Com mais de uma
 | `token` | O token de acesso: `status`, `set`, `logout`, `login`, `delete`. Veja [Token de acesso](/pt-br/access-token/) |
 | `gui` | Abrir o editor |
 | `path` | Mostrar o caminho do arquivo da conta |
+| `mcp` | Oferecer o editor a agentes de IA pelo MCP; `--allow-push` deixa que eles enviem também. Veja [Agentes de IA (MCP)](/pt-br/guides/ai-agents/) |
 
 Ids separados por vírgula (`id1,id2,id3`) funcionam em qualquer comando que aceite vários ids.
 
