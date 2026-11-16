@@ -3,15 +3,20 @@ title: Privacidade e segurança
 description: Onde ficam seus dados e seu token de acesso, o que o editor envia e para quem, e como apagar tudo.
 ---
 
-O Offline Meta Editor roda no seu computador. Você não precisa criar conta com a gente, e não existe nenhum
-servidor nosso no meio do caminho: o editor fala direto com a Meta, usando o seu token.
+O Offline Meta Editor roda no seu computador. Você não precisa criar conta com a gente, e seus dados nunca
+passam por um servidor nosso: o editor fala direto com a Meta, usando o seu token. A versão formal é a
+[política de privacidade](/pt-br/privacy-policy/), e a página [Exclusão de dados](/pt-br/data-deletion/)
+explica como apagar tudo.
 
 ## Com quem o editor fala
 
 - **A Graph API da Meta** (`graph.facebook.com`): para baixar suas contas, conferir e enviar suas
   alterações, pesquisar locais e interesses, e ler contagens de eventos e públicos.
-- **Os servidores de imagem da Meta**: para mostrar miniaturas e pré-visualizações, a partir dos links que o
+- **Os servidores de imagem da Meta**: para mostrar miniaturas e pré-visualizações, a partir dos links que a
   Meta manda nas respostas.
+- **O nosso servidor de login**, só quando você clica em **Log in with Facebook**: a Meta manda o seu
+  navegador de volta para ele, ele entrega a resposta da Meta ao editor e, quando precisa, estende o token
+  para cerca de 60 dias. Ele não guarda nada.
 
 Só isso. O editor não envia analytics, dados de uso nem relatórios de falhas. Quando você clica em
 **Meta's preview** ou em um link para uma publicação, a página abre no seu navegador.
@@ -22,9 +27,10 @@ Só isso. O editor não envia analytics, dados de uso nem relatórios de falhas.
   sessão, quando você cola o token dessa forma.
 - O editor nunca mostra o token (Settings mostra os três primeiros caracteres e o tamanho dele), nunca o
   grava em arquivo e nunca o coloca nos logs.
-- Ele só é enviado à Meta, junto com cada requisição.
-- Para salvar o token no Gerenciador de Credenciais, o editor entrega o token ao PowerShell pela entrada
-  padrão, nunca numa linha de comando que outros programas poderiam ver.
+- Ele só é enviado à Meta, junto com cada requisição, e ao nosso servidor de login durante o login com o
+  Facebook.
+- O editor salva o token no Gerenciador de Credenciais sozinho, pelas funções de credenciais do próprio
+  Windows, então nenhum outro programa vê o token.
 
 ## Seus dados
 

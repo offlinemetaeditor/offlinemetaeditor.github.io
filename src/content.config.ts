@@ -11,6 +11,8 @@ export const collections = {
 		schema: i18nSchema({
 			extend: z.object({
 				'mae.disclaimer': z.string().optional(),
+				'mae.privacy': z.string().optional(),
+				'mae.deletion': z.string().optional(),
 			}),
 		}),
 	}),

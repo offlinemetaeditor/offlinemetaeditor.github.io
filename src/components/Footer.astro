@@ -1,10 +1,17 @@
 ---
 // Starlight's footer, plus a note that the editor is not a Meta product.
 import Default from '@astrojs/starlight/components/Footer.astro';
+
+const base = Astro.locals.starlightRoute.lang === 'pt-BR' ? '/pt-br' : '';
 ---
 
 <Default><slot /></Default>
-<p class="disclaimer">{Astro.locals.t('mae.disclaimer')}</p>
+<p class="disclaimer">
+	{Astro.locals.t('mae.disclaimer')}
+	<br />
+	<a href={`${base}/privacy-policy/`}>{Astro.locals.t('mae.privacy')}</a> ·
+	<a href={`${base}/data-deletion/`}>{Astro.locals.t('mae.deletion')}</a>
+</p>
 
 <style>
 	.disclaimer {
@@ -13,5 +20,8 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 		border-top: 1px solid var(--sl-color-hairline);
 		font-size: var(--sl-text-xs);
 		color: var(--sl-color-gray-3);
+	}
+	.disclaimer a {
+		color: inherit;
 	}
 </style>
